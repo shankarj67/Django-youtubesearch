@@ -1,3 +1,6 @@
+import django_heroku
+
+
 """
 Django settings for youtubesearch project.
 
@@ -20,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '44m9rl-#9sz252%#r5xefirm!74v$xt##q(ip$bxv)94lf!&(h'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -120,4 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-YOUTUBE_DATA_API_KEY = "AIzaSyDXjP-tMHfzDGltjh_CZ8PgPLNAbRrvsXg"
+YOUTUBE_DATA_API_KEY = os.environ.get('YOUTUBE_DATA_API_KEY')
+django_heroku.settings(locals())

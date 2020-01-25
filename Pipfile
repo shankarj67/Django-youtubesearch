@@ -10,6 +10,8 @@ flake8 = "*"
 django = "*"
 requests = "*"
 isodate = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
